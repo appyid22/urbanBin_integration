@@ -1,0 +1,143 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f4f6fa;
+}
+
+.dark body {
+  background: #0f172a;
+}
+
+/* Leaflet popup override */
+.leaflet-popup-content-wrapper {
+  padding: 0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15) !important;
+  overflow: hidden;
+}
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4;
+}
+.leaflet-popup-tip-container { display: none; }
+
+/* ═══════════════════════════════════════════════════════
+   Alert Bins Panel — scrollbar & custom marker styles
+   ═══════════════════════════════════════════════════════ */
+
+/* Custom scrollbar for the alert list */
+.alert-bins-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.alert-bins-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.alert-bins-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%);
+  border-radius: 10px;
+}
+.alert-bins-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #dc2626 0%, #b91c1c 100%);
+}
+
+/* Alert panel positioning */
+.alert-bins-panel {
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+/* ── Leaflet alert marker pin ────────────────────────── */
+.alert-bin-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.alert-marker-pin {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border: 3px solid #fff;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.3), 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: alert-marker-pulse 1.6s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert-marker-inner {
+  width: 9px;
+  height: 9px;
+  background: #fff;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes alert-marker-pulse {
+  0%   { box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.3), 0 4px 12px rgba(0, 0, 0, 0.3); }
+  50%  { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0.1), 0 4px 12px rgba(0, 0, 0, 0.3); }
+  100% { box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.3), 0 4px 12px rgba(0, 0, 0, 0.3); }
+}
+
+/* ═══════════════════════════════════════════════════════
+   Smooth Animations
+   ═══════════════════════════════════════════════════════ */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-in-95 {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.animate-in {
+  animation: fade-in 0.2s ease-out, zoom-in-95 0.2s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes cardPop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+
+.kpi-card-click {
+  animation: cardPop 0.25s ease-out;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Card Hover Effects
+   ═══════════════════════════════════════════════════════ */
+
+.card-hover-effect {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
