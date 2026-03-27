@@ -29,18 +29,12 @@ async function signup_service(payload) {
 }
 
 async function login_service(payload) {
-<<<<<<< HEAD
   const email = payload.email.trim().toLowerCase();
   const password = payload.password;
 
   const user = await find_user_by_email(email);
   console.log('QUERY EMAIL:', email);
   console.log('QUERY RESULT:', user);
-=======
-  const { email, password } = payload;
-
-  const user = await find_user_by_email(email);
->>>>>>> a370dd646ee6c7c0d95edc771f031057615feaf6
   if (!user) {
     throw new AppError('Invalid email or password', 401);
   }

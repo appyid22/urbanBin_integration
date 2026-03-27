@@ -6,7 +6,6 @@ const prisma = new PrismaClient({
 });
 
 async function connect_db() {
-<<<<<<< HEAD
   try {
     await prisma.$connect();
     console.log("✅ DB CONNECTED SUCCESSFULLY");
@@ -14,10 +13,6 @@ async function connect_db() {
   } catch (err) {
     console.error("❌ DB CONNECTION FAILED:", err);
   }
-=======
-  await prisma.$connect();
-  logger.info('Database connected successfully');
->>>>>>> a370dd646ee6c7c0d95edc771f031057615feaf6
 }
 
 async function disconnect_db() {

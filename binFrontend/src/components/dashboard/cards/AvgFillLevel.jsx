@@ -2,11 +2,7 @@ import { LineChart, Line, ResponsiveContainer } from 'recharts';
 
 const data = [{ v: 55 }, { v: 58 }, { v: 56 }, { v: 60 }, { v: 59 }, { v: 62 }, { v: 61 }, { v: 63 }];
 
-<<<<<<< HEAD
 const AvgFillLevel = ({ fillLevel = 0 }) => (
-=======
-const AvgFillLevel = ({ fillLevel = 63 }) => (
->>>>>>> a370dd646ee6c7c0d95edc771f031057615feaf6
   <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-4 flex items-center gap-4">
     <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center shrink-0">
       <svg className="w-7 h-7 text-blue-500" fill="currentColor" viewBox="0 0 24 24">

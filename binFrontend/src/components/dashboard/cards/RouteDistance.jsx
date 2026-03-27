@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 const RouteDistance = ({ distance = 0, estimatedTime = '--' }) => (
-=======
-const RouteDistance = ({ distance = 82, estimatedTime = '2 hr 5 min' }) => (
->>>>>>> a370dd646ee6c7c0d95edc771f031057615feaf6
   <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-3 flex items-center gap-3 h-full">
     <div className="w-10 h-10 bg-yellow-100 dark:bg-yellow-900/30 rounded-xl flex items-center justify-center shrink-0">
       <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">

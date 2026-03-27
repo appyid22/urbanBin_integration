@@ -10,10 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
-=======
-    "@stomp/stompjs": "^7.3.0",
->>>>>>> a370dd646ee6c7c0d95edc771f031057615feaf6
     "axios": "^1.13.5",
     "leaflet": "^1.9.4",
     "react": "^19.2.0",
@@ -22,11 +18,7 @@
     "react-leaflet": "^5.0.0",
     "react-router-dom": "^6.30.3",
     "recharts": "^3.7.0",
-<<<<<<< HEAD
     "socket.io-client": "^4.8.3",
-=======
-    "sockjs-client": "^1.6.1",
->>>>>>> a370dd646ee6c7c0d95edc771f031057615feaf6
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {

@@ -39,7 +39,6 @@ const FlyToSelected = ({ selectedBin }) => {
   return null;
 };
 
-<<<<<<< HEAD
 const BinLocationsMap = ({ bins = [], selectedBin = null }) => {
   const markers = useMemo(() => {
     return bins
@@ -57,28 +56,6 @@ const BinLocationsMap = ({ bins = [], selectedBin = null }) => {
         };
       })
       .filter(Boolean);
-=======
-const SAMPLE_MARKERS = [
-  { id: 'bin-104', name: 'Bin #104', fillLevel: 92, address: 'Sector 20, Gurgaon', lastUpdated: '10 mins ago', position: [28.6139, 77.209] },
-  { id: 'bin-102', name: 'Bin #102', fillLevel: 95, address: 'Sector 62, Noida',   lastUpdated: '5 mins ago',  position: [28.6212, 77.2165] },
-  { id: 'bin-87',  name: 'Bin #87',  fillLevel: 92, address: 'Sector 15, Gurgaon', lastUpdated: '8 mins ago',  position: [28.6065, 77.2016] },
-  { id: 'bin-45',  name: 'Bin #45',  fillLevel: 91, address: 'Market Area',        lastUpdated: '12 mins ago', position: [28.6300, 77.2200] },
-  { id: 'bin-101', name: 'Bin #101', fillLevel: 45, address: 'Sector 12',          lastUpdated: '3 mins ago',  position: [28.6180, 77.2080] },
-  { id: 'bin-55',  name: 'Bin #55',  fillLevel: 68, address: 'Sector 5',           lastUpdated: '15 mins ago', position: [28.6050, 77.2150] },
-];
-
-const BinLocationsMap = ({ bins = [], selectedBin = null }) => {
-  const markers = useMemo(() => {
-    if (bins.length > 0) {
-      return bins.map(b => {
-        const lat = b.lat ?? b.latitude ?? b.location?.lat;
-        const lng = b.lng ?? b.longitude ?? b.location?.lng;
-        if (!lat || !lng) return null;
-        return { id: b.id, name: b.name ?? `Bin #${b.id}`, fillLevel: b.fillLevel ?? 0, address: b.address ?? '', lastUpdated: b.lastUpdated ?? 'Recently', position: [lat, lng] };
-      }).filter(Boolean);
-    }
-    return SAMPLE_MARKERS;
->>>>>>> a370dd646ee6c7c0d95edc771f031057615feaf6
   }, [bins]);
 
   return (

@@ -1,11 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-<<<<<<< HEAD
   baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api/v1',
-=======
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8080/api',
->>>>>>> a370dd646ee6c7c0d95edc771f031057615feaf6
   headers: {
     'Content-Type': 'application/json',
   },
@@ -32,7 +28,6 @@ api.interceptors.response.use(
       localStorage.removeItem('user');
       window.location.href = '/login';
     }
-<<<<<<< HEAD
 
     const normalized_error = {
       status: error.response?.status,
@@ -47,9 +42,6 @@ api.interceptors.response.use(
     };
 
     return Promise.reject(normalized_error);
-=======
-    return Promise.reject(error);
->>>>>>> a370dd646ee6c7c0d95edc771f031057615feaf6
   }
 );
 

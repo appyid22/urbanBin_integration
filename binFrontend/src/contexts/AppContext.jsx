@@ -1,13 +1,10 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { useAuth } from './AuthContext';
 import * as websocket from '../services/websocket';
-<<<<<<< HEAD
 import { get_bins_request } from '../services/bins.service';
 import { get_kpi_request } from '../services/analytics.service';
 import { adapt_bins } from '../adapters/bin.adapter';
 import { adapt_kpi } from '../adapters/analytics.adapter';
-=======
->>>>>>> a370dd646ee6c7c0d95edc771f031057615feaf6
 
 const AppContext = createContext(null);
 
@@ -27,7 +24,6 @@ export const AppProvider = ({ children }) => {
   const clearSelectedBin = useCallback(() => setSelectedBin(null), []);
 
   useEffect(() => {
-<<<<<<< HEAD
     if (!isAuthenticated || !token) {
       setBins([]);
       setAnalytics({});
@@ -36,13 +32,13 @@ export const AppProvider = ({ children }) => {
 
     const fetch_dashboard_data = async () => {
       try {
-        const [bins_response, kpi_response] = await Promise.all([
+        const [bins_data, kpi_data] = await Promise.all([
           get_bins_request(),
           get_kpi_request()
         ]);
 
-        setBins(adapt_bins(bins_response?.data || []));
-        setAnalytics(adapt_kpi(kpi_response?.data || {}));
+        setBins(adapt_bins(bins_data || []));
+        setAnalytics(adapt_kpi(kpi_data || {}));
       } catch (error) {
         console.error('Failed to load dashboard data:', error.message || error);
       }
@@ -56,10 +52,6 @@ export const AppProvider = ({ children }) => {
       const shouldConnect = import.meta.env.VITE_ENABLE_WS !== 'false';
       let unsubscribe_bin_update = () => {};
       let unsubscribe_sensor_offline = () => {};
-=======
-    if (isAuthenticated && token) {
-      const shouldConnect = import.meta.env.VITE_ENABLE_WS !== 'false';
->>>>>>> a370dd646ee6c7c0d95edc771f031057615feaf6
       
       if (!shouldConnect) {
         console.log('WebSocket disabled in development');
@@ -70,7 +62,6 @@ export const AppProvider = ({ children }) => {
         token,
         () => {
           setWsConnected(true);
-<<<<<<< HEAD
 
           unsubscribe_bin_update = websocket.subscribe('binUpdate', (event) => {
             setBins((previous_bins) =>
@@ -91,19 +82,6 @@ export const AppProvider = ({ children }) => {
 
           unsubscribe_sensor_offline = websocket.subscribe('sensorOffline', (event) => {
             setAlerts((previous_alerts) => [event, ...previous_alerts].slice(0, 50));
-=======
-          
-          websocket.subscribe('/topic/bins', (data) => {
-            setBins(data);
-          });
-          
-          websocket.subscribe('/topic/alerts', (data) => {
-            setAlerts(prev => [data, ...prev].slice(0, 50));
-          });
-          
-          websocket.subscribe('/topic/analytics', (data) => {
-            setAnalytics(data);
->>>>>>> a370dd646ee6c7c0d95edc771f031057615feaf6
           });
         },
         (error) => {
@@ -113,11 +91,8 @@ export const AppProvider = ({ children }) => {
       );
 
       return () => {
-<<<<<<< HEAD
         unsubscribe_bin_update();
         unsubscribe_sensor_offline();
-=======
->>>>>>> a370dd646ee6c7c0d95edc771f031057615feaf6
         websocket.disconnect();
         setWsConnected(false);
       };

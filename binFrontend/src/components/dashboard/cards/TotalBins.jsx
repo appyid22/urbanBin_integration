@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 const TotalBins = ({ totalBins = 0, normalBins = 0, alertBins = 0 }) => (
-=======
-const TotalBins = ({ totalBins = 150, normalBins = 110, alertBins = 40 }) => (
->>>>>>> a370dd646ee6c7c0d95edc771f031057615feaf6
   <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-4 flex items-center gap-4">
     <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center shrink-0">
       <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">

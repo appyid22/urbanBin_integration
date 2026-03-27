@@ -2,11 +2,7 @@ import { LineChart, Line, ResponsiveContainer } from 'recharts';
 
 const data = [{ v: 10 }, { v: 12 }, { v: 11 }, { v: 14 }, { v: 13 }, { v: 16 }, { v: 15 }, { v: 18 }];
 
-<<<<<<< HEAD
 const FuelSaved = ({ percentage = 0 }) => (
-=======
-const FuelSaved = ({ percentage = 15 }) => (
->>>>>>> a370dd646ee6c7c0d95edc771f031057615feaf6
   <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-4 flex items-center gap-4">
     <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-xl flex items-center justify-center shrink-0">
       <svg className="w-7 h-7 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
