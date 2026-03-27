@@ -196,15 +196,6 @@ npm run dev
 
 ---
 
-## 📈 Future Improvements
-
-* AI-based route optimization
-* Mobile application support
-* Advanced analytics dashboard
-* Role-based access control
-
----
-
 ## 👨‍💻 Author
 
 **Arpit Singh**
